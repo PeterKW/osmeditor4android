@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import android.util.Log;
 import android.view.Menu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.view.ActionMode;
@@ -80,6 +81,12 @@ public class WaySplittingActionModeCallback extends NonSimpleActionModeCallback 
                 }
             });
         }
+        return true;
+    }
+    
+    @Override
+    public boolean handleElementLongClick(@NonNull OsmElement element) {
+        Log.d("grummel", "longClick on " + element.getDescription());
         return true;
     }
 
